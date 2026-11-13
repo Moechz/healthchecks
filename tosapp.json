@@ -1,0 +1,109 @@
+{
+  "app_id": "healthchecksdocker",
+  "title": "Healthchecks",
+  "image": "linuxserver/healthchecks:5.0.3",
+  "repo_name": "healthchecks",
+  "mode": "wrapper",
+  "container_port": 8000,
+  "category": [
+    "Utilities"
+  ],
+  "volumes": [
+    {
+      "host": "/Volume1/DockerAppData/healthchecksdocker/config",
+      "container": "/config"
+    }
+  ],
+  "env": {
+    "TZ": "Asia/Shanghai"
+  },
+  "auth": "healthchecks",
+  "upstream_url": "https://github.com/healthchecks/healthchecks",
+  "upstream_license": "BSD-3-Clause",
+  "descript": "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped.",
+  "release_note": "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder.",
+  "important": "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet.",
+  "probe": {
+    "user_in_image": "(root)",
+    "entrypoint": [
+      "/init"
+    ],
+    "cmd": null,
+    "exposed_ports": [
+      8000
+    ],
+    "declared_volumes": [
+      "/config"
+    ],
+    "image_healthcheck": [],
+    "digest": "linuxserver/healthchecks@sha256:305c17f74657cb5c1bece7b158b82025806b227a47d4c3493cdb4bf8f13eea88",
+    "architecture": "x86_64",
+    "platforms": [
+      "x86_64",
+      "aarch64"
+    ],
+    "http_client_in_image": "curl",
+    "trial_run": {
+      "ok": true,
+      "http_code": "",
+      "state": "running",
+      "paths": [],
+      "host_port": 18000,
+      "log_tail": "14_flip_reason.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0115_flip_api_flip_owner_created.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0116_alter_check_badge_key.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0117_fill_badge_key.py': Operation not permitted\n**** Permissions could not be set. This is probably because your volume mounts are remote or read-only. ****\n**** The app may not work properly and we will not provide support for it. ****\nNo SITE_ROOT provided, halting init\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0118_alter_check_badge_key.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0119_check_filter_default_fail_check_filter_http_body_and_more.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0120_fix_ping_kind.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0121_fix_legacy_timezones_ii.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0122_delete_msteams_linenotify.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/0123_alter_channel_kind.py': Operation not permitted\nchown: changing ownership of '/app/healthchecks/hc/api/migrations/__init__.py': Operation not permitted",
+      "files_in_mounts": "/tmp/tosdocker-trial-1794599691/config/local_settings.py"
+    },
+    "docker_hub": {},
+    "github": {
+      "owner": "linuxserver",
+      "repo": "docker-healthchecks",
+      "description": "",
+      "license": "GPL-3.0",
+      "homepage": ""
+    }
+  },
+  "healthcheck": [
+    "CMD-SHELL",
+    "curl -s -o /dev/null http://127.0.0.1:8000/ || exit 1"
+  ],
+  "platform": "x86_64",
+  "user": "1000:1000",
+  "publisher": "Moechz",
+  "compose_project": "healthchecksdocker",
+  "github_repo": "healthchecks",
+  "upstream_version": "5.0.3",
+  "release_tag_prefix": "v",
+  "version": "5.0.3-1",
+  "help": "https://github.com/Moechz/healthchecks/issues",
+  "official": "https://github.com/healthchecks/healthchecks",
+  "license": "BSD-3-Clause",
+  "docker_socket": false,
+  "group_add": [],
+  "entrypoint_file": "src/entrypoint.sh",
+  "healthcheck_start_period": "90s",
+  "wrapper_note": "the LinuxServer.io image runs its init and uWSGI through s6 as root; s6 cannot\nstart in a non-root container, so this wrapper copies the app to /tmp, wires the\nDjango local settings and SQLite database to the data folder and starts uWSGI\ndirectly as uid 1000.",
+  "wrapper_note_readme": "- **Entrypoint wrapper**: the upstream s6 init cannot run as uid 1000; the wrapper copies the app to a writable directory, wires `local_settings.py`/`hc.sqlite` to the data folder and starts uWSGI directly.",
+  "translations": {
+    "zh-cn": {
+      "descript": "Healthchecks 是定时任务与备份的看门狗：每个检查项都有一个专属 ping 地址，脚本跑完就请求一下，迟到自己没跑就会告警。它还提供状态徽章、公开状态页，以及邮件/webhook/Slack 通知——特别适合发现“备份悄悄停了”这类问题。",
+      "important": "需要 DockerEngine（缺失时应用中心会自动安装）。首次访问先注册账号，然后新建检查项，把它的 ping 地址加到你的脚本里（curl 一下即可）。数据与设置保存在 DockerAppData/healthchecksdocker/config。通知邮件里的链接基于 SITE_ROOT，默认写的是 http://localhost:8000——请把 config/local_settings.py 里的 SITE_ROOT 改成你的 NAS 地址后重启应用。界面为纯 HTTP，暴露到公网前请配置带 TLS 的反向代理。",
+      "release_note": "1. 首个版本：基于 Docker Hub 的 Healthchecks 5.0.3，以非 root 容器运行。定时任务/备份看门狗，支持 ping 地址、状态页与通知；设置与 SQLite 数据库保存在应用数据目录。"
+    },
+    "zh-hk": {
+      "descript": "Healthchecks 是定時任務與備份的看門狗：每個檢查項都有一個專屬 ping 位址，腳本跑完就請求一下，遲到自己沒跑就會告警。它還提供狀態徽章、公開狀態頁，以及電郵/webhook/Slack 通知——特別適合發現「備份悄悄停了」這類問題。",
+      "important": "需要 DockerEngine（缺少時應用中心會自動安裝）。首次存取先註冊帳號，然後新增檢查項，把它的 ping 位址加到你的腳本裡（curl 一下即可）。資料與設定保存在 DockerAppData/healthchecksdocker/config。通知郵件裡的連結基於 SITE_ROOT，預設寫的是 http://localhost:8000——請把 config/local_settings.py 裡的 SITE_ROOT 改成你的 NAS 位址後重啟應用。介面為純 HTTP，公開到互聯網前請配置帶 TLS 的反向代理。",
+      "release_note": "1. 首個版本：基於 Docker Hub 的 Healthchecks 5.0.3，以非 root 容器運行。定時任務/備份看門狗，支援 ping 位址、狀態頁與通知；設定與 SQLite 資料庫保存在應用資料目錄。"
+    }
+  },
+  "data_notes": "`/config` (mounted from `DockerAppData/healthchecksdocker/config`) holds `hc.sqlite`, `local_settings.py` (SECRET_KEY, ALLOWED_HOSTS, SITE_ROOT) and the uploads folder.",
+  "design_notes": [
+    "**s6 bypassed.** The LSIO init and its uWSGI service need root; the wrapper copies the app to `/tmp/hc` (writable) and runs uWSGI as uid 1000.",
+    "**Host header acceptance.** `ALLOWED_HOSTS = [\"*\"]` is seeded so the UI works from any NAS IP; the user-editable `SITE_ROOT` controls absolute links in notifications.",
+    "**SQLite only.** The database is a single file in the data folder."
+  ],
+  "limitations": [
+    "- Notification links use SITE_ROOT (seeded as localhost) until you edit it in `local_settings.py`.",
+    "- The UI is plain HTTP; use a TLS reverse proxy before exposing it to the internet.",
+    "- The image is copied to /tmp on every start; the persistent state is only in the data folder."
+  ],
+  "host_port": 8053
+}

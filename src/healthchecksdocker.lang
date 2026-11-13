@@ -1,0 +1,195 @@
+# ===========================================================================
+# Multilingual file for the TOS 7 Docker application "healthchecksdocker".
+# File name MUST be: <appid>.lang.  23-language superset (14 required by TOS).
+# The App Center picks the text matching the user's device language;
+# untranslated nodes fall back to English, which the official guide allows.
+# Fields: name (app title), auth (upstream author), descript (up to 512
+# chars), release_note, important (up to 512 chars).
+# Translations come from tosapp.json "translations"; run
+#   tosdocker lang <app>          to re-render this file
+#   tosdocker translate <app>     to see what still needs translating
+# ===========================================================================
+[en-us]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[zh-cn]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks 是定时任务与备份的看门狗：每个检查项都有一个专属 ping 地址，脚本跑完就请求一下，迟到自己没跑就会告警。它还提供状态徽章、公开状态页，以及邮件/webhook/Slack 通知——特别适合发现“备份悄悄停了”这类问题。"
+release_note = "1. 首个版本：基于 Docker Hub 的 Healthchecks 5.0.3，以非 root 容器运行。定时任务/备份看门狗，支持 ping 地址、状态页与通知；设置与 SQLite 数据库保存在应用数据目录。"
+important    = "需要 DockerEngine（缺失时应用中心会自动安装）。首次访问先注册账号，然后新建检查项，把它的 ping 地址加到你的脚本里（curl 一下即可）。数据与设置保存在 DockerAppData/healthchecksdocker/config。通知邮件里的链接基于 SITE_ROOT，默认写的是 http://localhost:8000——请把 config/local_settings.py 里的 SITE_ROOT 改成你的 NAS 地址后重启应用。界面为纯 HTTP，暴露到公网前请配置带 TLS 的反向代理。"
+
+[zh-hk]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks 是定時任務與備份的看門狗：每個檢查項都有一個專屬 ping 位址，腳本跑完就請求一下，遲到自己沒跑就會告警。它還提供狀態徽章、公開狀態頁，以及電郵/webhook/Slack 通知——特別適合發現「備份悄悄停了」這類問題。"
+release_note = "1. 首個版本：基於 Docker Hub 的 Healthchecks 5.0.3，以非 root 容器運行。定時任務/備份看門狗，支援 ping 位址、狀態頁與通知；設定與 SQLite 資料庫保存在應用資料目錄。"
+important    = "需要 DockerEngine（缺少時應用中心會自動安裝）。首次存取先註冊帳號，然後新增檢查項，把它的 ping 位址加到你的腳本裡（curl 一下即可）。資料與設定保存在 DockerAppData/healthchecksdocker/config。通知郵件裡的連結基於 SITE_ROOT，預設寫的是 http://localhost:8000——請把 config/local_settings.py 裡的 SITE_ROOT 改成你的 NAS 位址後重啟應用。介面為純 HTTP，公開到互聯網前請配置帶 TLS 的反向代理。"
+
+[fr-fr]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[de-de]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[it-it]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[es-es]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[hu-hu]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ja-jp]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ko-kr]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[pl-pl]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ru-ru]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[tr-tr]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[pt-pt]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[ar-sa]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[cs-cz]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[he-il]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[id-id]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[nb-no]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[nl-nl]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[sv-se]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[th-th]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
+[vi-vn]
+name         = "Healthchecks"
+auth         = "healthchecks"
+version      = "@@VERSION@@"
+descript     = "Healthchecks is a watchdog for your cron jobs, backups and scheduled tasks: each check gets a unique URL, your script pings it when it runs, and Healthchecks alerts you when a ping is late or missing. It also offers status badges, a public status page and email/webhook/Slack notifications - perfect for spotting a backup that silently stopped."
+release_note = "1. First release: Healthchecks 5.0.3 from Docker Hub as a non-root container. Cron/backup watchdog with ping URLs, status pages and notifications; settings and SQLite database in the application data folder."
+important    = "Requires DockerEngine (installed automatically if missing). Create an account on first visit, then add a check and call its ping URL from your script (curl). Data and settings live in DockerAppData/healthchecksdocker/config. Notification emails build their links from SITE_ROOT, which is seeded as http://localhost:8000 - edit SITE_ROOT in config/local_settings.py to your NAS URL and restart the app. Plain HTTP; use a TLS reverse proxy before exposing it to the internet."
+
